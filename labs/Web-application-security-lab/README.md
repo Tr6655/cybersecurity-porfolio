@@ -2,8 +2,8 @@
 
 ## Lab Overview
 
-This lab demonstrates a hands-on web application security testing lab using OWASP Juice Shop, Docker, and Burp Suite Community Edition.
----
+This lab demonstrates a hands-on web application testing using OWASP Juice Shop, Docker, and Burp Suite Community Edition.
+--- 
 
 ## Objectives
 
