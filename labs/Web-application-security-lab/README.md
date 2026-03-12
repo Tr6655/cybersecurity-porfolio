@@ -70,7 +70,7 @@ docker run --rm -p 3000:3000 bkimminich/juice-shop
 
 This launches the Juice Shop container and exposes the application on: http://localhost:3000
 
-## Juice Shop Home Page 
+## Juice Shop Home Page  ![description](screenshots/01-juice-shop-home.png)
 
 # Step 2 – Configure Burp Suite Proxy
 
@@ -82,7 +82,7 @@ Proxy listener configuration:
 
 Browser proxy settings were configured in Windows LAN settings.  
 
-# Step 3 - Capture Login Request ![description](screenshots/01-juice-shop-home.png)
+# Step 3 - Capture Login Request
 
 After creating a test account and logging in, Burp intercepted the authentication request.
 
