@@ -70,123 +70,28 @@ docker run --rm -p 3000:3000 bkimminich/juice-shop
 
 This launches the Juice Shop container and exposes the application on: http://localhost:3000
 
-## Step 2 – Run OWASP Juice Shop
-# **Step 2 – Configure Burp Suite Proxy** 
+## Step 2 – Configure Burp Suite Proxy
 
 Burp Suite was used to intercept and analyze HTTP traffic between the browser and the application.
 
-Proxy listener configuration:
+**Proxy listener configuration**
 
 127.0.0.1:8080
 
 Browser proxy settings were configured in Windows LAN settings.
 
-Step 3 – Capture Login Request
+---
+
+## Step 3 – Capture Login Request
 
 After creating a test account and logging in, Burp intercepted the authentication request.
 
-Example intercepted request:
+**Example intercepted request**
 
+```http
 POST /rest/user/login HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
-
-Example request body:
-
-{
- "email":"test@test.com",
- "password":"Test123!"
-}
-Intercepted Login Request
-
-Step 4 – Send Request to Repeater
-
-The captured login request was sent to Burp Repeater to allow manual manipulation and repeated testing.
-
-Process:
-
-Right click intercepted request
-
-Select Send to Repeater
-
-Modify parameters and resend requests
-
-Normal Login Request in Repeater
-
-Step 5 – SQL Injection Testing
-
-The password field was modified to test for possible SQL injection behavior.
-
-Original request:
-
-"password":"Test123!"
-
-Test payload used:
-
-"password":"' OR 1=1--"
-
-The modified request was sent using Burp Repeater to observe server responses.
-
-SQL Injection Test
-
-Step 6 – Broken Access Control Testing
-
-Authorization testing was performed by modifying object identifiers in intercepted requests.
-
-Example request:
-
-GET /rest/basket/1
-
-Modified request:
-
-GET /rest/basket/2
-
-This type of test checks whether the server validates ownership of objects.
-
-Broken Access Control Test
-
-Step 7 – Cross-Site Scripting (XSS) Testing
-
-Input fields were tested for script injection.
-
-Example payload used:
-
-<script>alert(1)</script>
-
-This payload checks whether the application properly sanitizes user input before rendering it in the browser.
-
-XSS Test
-
-Step 8 – Authentication Testing Using Burp Intruder
-
-The login request was sent to Burp Intruder to test authentication behavior.
-
-Steps:
-
-Capture login request
-
-Send to Intruder
-
-Mark password field as payload position
-
-Test multiple password attempts
-
-Example payload list:
-
-password
-123456
-admin
-test123
-
-# Remediation Recommendations
-
-The following recommendations can help mitigate the tested vulnerabilities.
-
-### SQL Injection
-
-- Use parameterized SQL queries
-- Implement server-side input validation
-- Avoid dynamic SQL query construction
 
 ### Broken Access Control
 
