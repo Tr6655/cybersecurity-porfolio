@@ -9,7 +9,7 @@ The objective of this lab was to simulate a basic web application security asses
 ---
 # Vulnerability Mapping to OWASP Top 10
 
-| Test Performed| OWASP Category| Description |
+| Test Performed| OWASP Category | Description |
 | SQL Injection Testing | A03:2021 – Injection |Tested authentication input handling using manipulated login requests |
 | Broken Access Control | A01:2021 – Broken Access Control | Modified object identifiers to test authorization enforcement |
 | Cross Site Scripting (XSS)| A03:2021 – Injection | Tested user input fields for unsafe script rendering |
