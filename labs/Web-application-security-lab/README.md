@@ -114,3 +114,71 @@ Modify parameters and resend requests
 
 ## Normal Login Request in Repeater  ![description](screenshots/03-repeater-normal-request.png)
 
+# Step 5 – SQL Injection Testing
+
+The password field was modified to test for possible SQL injection behavior.
+
+Original request:
+
+"password":"Test123!"
+
+Test payload used:
+
+"password":"' OR 1=1--"
+
+The modified request was sent using Burp Repeater to observe server responses.
+
+## SQL Injection Test ![description](screenshots/04-sql-injection-test.png)
+
+Step 6 – Broken Access Control Testing
+
+Authorization testing was performed by modifying object identifiers in intercepted requests.
+
+Example request:
+
+GET /rest/basket/1
+
+Modified request:
+
+GET /rest/basket/2
+
+This type of test checks whether the server validates ownership of objects.
+
+Broken Access Control Test
+
+Step 7 – Cross-Site Scripting (XSS) Testing
+
+Input fields were tested for script injection.
+
+Example payload used:
+
+<script>alert(1)</script>
+
+This payload checks whether the application properly sanitizes user input before rendering it in the browser.
+
+XSS Test
+
+Step 8 – Authentication Testing Using Burp Intruder
+
+The login request was sent to Burp Intruder to test authentication behavior.
+
+Steps:
+
+Capture login request
+
+Send to Intruder
+
+Mark password field as payload position
+
+Test multiple password attempts
+
+Example payload list:
+
+password
+123456
+admin
+test123
+Authentication Testing
+
+
+
