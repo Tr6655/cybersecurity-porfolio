@@ -16,7 +16,7 @@ The objective of this lab was to simulate a basic web application security asses
 | Cross-Site Scripting (XSS) | A03:2021 – Injection | Injected JavaScript payload to test input sanitization | Browser + Burp | screenshots/06-xss-test.png |
 | Authentication Testing | A07:2021 – Identification and Authentication Failures | Evaluated login behavior using Burp Intruder payload testing | Burp Intruder | screenshots/07-authentication-testing.png |
 
-# Attack Flow Example
+# Attack Flow 
 
 User Browser
      ↓
