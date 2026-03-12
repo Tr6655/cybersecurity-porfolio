@@ -8,12 +8,14 @@ The objective of this lab was to simulate a basic web application security asses
 
 ---
 # Vulnerability Mapping to OWASP Top 10
+## Vulnerability Mapping to OWASP Top 10
 
-| Test Performed| OWASP Category | Description |
-| SQL Injection Testing | A03:2021 – Injection |Tested authentication input handling using manipulated login requests |
-| Broken Access Control | A01:2021 – Broken Access Control | Modified object identifiers to test authorization enforcement |
-| Cross Site Scripting (XSS)| A03:2021 – Injection | Tested user input fields for unsafe script rendering |
-| Authentication Testing| A07:2021 – Identification and Authentication Failures | Evaluated login behavior using Burp Intruder |
+| Test Performed | OWASP Category | Description | Tool Used | Evidence |
+|---|---|---|---|---|
+| SQL Injection Testing | A03:2021 – Injection | Manipulated login request parameters to test backend query handling | Burp Repeater | screenshots/04-sql-injection-test.png |
+| Broken Access Control | A01:2021 – Broken Access Control | Modified object identifiers to test authorization enforcement | Burp Repeater | screenshots/05-broken-access-control.png |
+| Cross-Site Scripting (XSS) | A03:2021 – Injection | Injected JavaScript payload to test input sanitization | Browser + Burp | screenshots/06-xss-test.png |
+| Authentication Testing | A07:2021 – Identification and Authentication Failures | Evaluated login behavior using Burp Intruder payload testing | Burp Intruder | screenshots/07-authentication-testing.png |
 
 # Attack Flow Example
 
