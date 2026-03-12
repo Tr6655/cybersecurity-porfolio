@@ -59,6 +59,8 @@ The following testing methodology was used during this lab:
    - Used Burp Intruder to test login behavior
    - Evaluated rate limiting and response patterns
   
+---
+
 # Step 1 – Run OWASP Juice Shop
 
 Start the vulnerable application using Docker.
@@ -67,46 +69,14 @@ Command used:
 
 ```powershell
 docker run --rm -p 3000:3000 bkimminich/juice-shop
-
 This launches the Juice Shop container and exposes the application on: http://localhost:3000
 
-## Step 2 – Configure Burp Suite Proxy
+# Step 2 – Configure Burp Suite Proxy
 
 Burp Suite was used to intercept and analyze HTTP traffic between the browser and the application.
 
-**Proxy listener configuration**
+Proxy listener configuration:
 
 127.0.0.1:8080
 
 Browser proxy settings were configured in Windows LAN settings.
-
----
-
-## Step 3 – Capture Login Request
-
-After creating a test account and logging in, Burp intercepted the authentication request.
-
-**Example intercepted request**
-
-```http
-POST /rest/user/login HTTP/1.1
-Host: localhost:3000
-Content-Type: application/json
-
-### Broken Access Control
-
-- Enforce authorization checks on the server
-- Validate user ownership of requested resources
-- Avoid relying on client-side access controls
-
-### Cross Site Scripting (XSS)
-
-- Implement proper output encoding
-- Use input validation for user supplied data
-- Consider implementing Content Security Policy (CSP)
-
-### Authentication Weakness
-
-- Implement login rate limiting
-- Use account lockout mechanisms
-- Implement multi-factor authentication
