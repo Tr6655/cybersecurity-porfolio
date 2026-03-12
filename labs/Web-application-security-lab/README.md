@@ -65,9 +65,9 @@ The following testing methodology was used during this lab:
 
 Start the vulnerable application using Docker.
 
-Command used:
-powershell
+Command used: powershell
 docker run --rm -p 3000:3000 bkimminich/juice-shop
+
 This launches the Juice Shop container and exposes the application on: http://localhost:3000
 
 # Step 2 – Configure Burp Suite Proxy
