@@ -3,10 +3,46 @@
 ## Lab Overview
 
 This lab demonstrates a hands-on web application security testing lab using OWASP Juice Shop, Docker, and Burp Suite Community Edition.
-
-The objective of this lab was to simulate a basic web application security assessment by intercepting HTTP traffic, analyzing requests, and testing for common web vulnerabilities.
-
 ---
+
+## Objectives
+
+The objectives of this lab were to:
+
+1. Install and run a deliberately vulnerable web application locally
+2. Configure Burp Suite as an intercepting proxy
+3. Capture and analyze login and application traffic
+4. Test for common web vulnerabilities
+5. Document the process, evidence, and findings for portfolio use
+---
+
+## Lab Environment
+
+### Operating System
+- Windows 10/11
+
+### Tools Used
+- Docker Desktop
+- OWASP Juice Shop
+- Burp Suite Community Edition
+- Google Chrome
+- Windows PowerShell
+- GitHub
+---
+
+## Skills Demonstrated
+
+- Web application security testing
+- HTTP request and response analysis
+- Burp Suite Proxy, Repeater, and Intruder
+- Docker container deployment
+- Authentication testing
+- Input validation testing
+- Parameter tampering
+- Security reporting and evidence collection
+- GitHub project documentation
+---
+
 # Vulnerability Mapping to OWASP Top 10
 
 | Test Performed | OWASP Category | Description | Tool Used | Evidence |
@@ -15,6 +51,7 @@ The objective of this lab was to simulate a basic web application security asses
 | Broken Access Control | A01:2021 – Broken Access Control | Modified object identifiers to test authorization enforcement | Burp Repeater | screenshots/05-broken-access-control.png |
 | Cross-Site Scripting (XSS) | A03:2021 – Injection | Injected JavaScript payload to test input sanitization | Browser + Burp | screenshots/06-xss-test.png |
 | Authentication Testing | A07:2021 – Identification and Authentication Failures | Evaluated login behavior using Burp Intruder payload testing | Burp Intruder | screenshots/07-authentication-testing.png |
+---
 
 # Attack Flow 
 
@@ -58,7 +95,6 @@ The following testing methodology was used during this lab:
 6. **Authentication Testing**
    - Used Burp Intruder to test login behavior
    - Evaluated rate limiting and response patterns
-  
 ---
 
 # Step 1 – Run OWASP Juice Shop
@@ -180,6 +216,36 @@ admin
 test123
 
 ## Authentication Testing  ![description](screenshots/07-authentication-testing.png)
+
+# Findings Summary
+
+This lab focused on four web security areas:
+
+SQL Injection Testing	Modified login input in Repeater to test for backend input handling weaknesses
+Broken Access Control	Changed object identifiers to test unauthorized access to resources
+Cross-Site Scripting (XSS)	Tested browser execution of unsanitized script input
+Authentication Weakness Testing	Used Burp Intruder to evaluate login control behavior
+
+# Lessons Learned
+
+This lab reinforced several important application security concepts:
+
+Web requests can be intercepted and analyzed in real time using a proxy
+
+Authentication traffic can be manipulated to test server-side validation
+
+Authorization cannot be trusted unless enforced on the server
+
+Input handling issues can lead to vulnerabilities like SQL injection and XSS
+
+Manual testing provides valuable insight beyond automated scanning alone
+
+Proper documentation makes technical work easier to present professionally
+
+# Ethical Use Statement
+
+All testing in this lab was performed against OWASP Juice Shop, an intentionally vulnerable application designed for legal security training and education.
+No unauthorized systems were targeted.
 
 
 
