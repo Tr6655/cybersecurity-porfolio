@@ -98,7 +98,7 @@ Example request body:
  "email":"test1@test.com",
  "password":"Test123!"
 }
-## Intercepted Login Request
+## Intercepted Login Request  ![description](screenshots/02-login-request-intercept.png)
 
 # Step 4 – Send Request to Repeater
 
